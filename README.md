@@ -5,8 +5,9 @@
 ### 事前準備：Docker Imageの作成（省略してOK）
 
 - Dockerfileは作成していないが、この[ページ](https://www.amane.to/archives/710)に従ってImageを作成する
+
 - こちらで作成したImageをDockerHubの[taiga4112/jmodelica:jm0](https://hub.docker.com/repository/docker/taiga4112/jmodelica)にPushしているので、以降ではこのイメージを使う前提で説明する
-  - 本来は、JModelicaの登録が必要みたいなので、これはあくまでお試し用ということでご理解ください
+    - 本来は、JModelicaの登録が必要みたいなので、これはあくまでお試し用ということでご理解ください
 
 ## `scripts/create_fmu_from_jmodelica.py`を利用してmoファイルからFMUファイルを作成する例
 
@@ -51,7 +52,7 @@
 
 ## Jupyter上でFMU作成とCo-Simulationを実行する例
 
-- DockerHubにある[taiga4112/jmodelica:jm0](https://hub.docker.com/repository/docker/taiga4112/jmodelica)のイメージを利用して、以下のコマンドでJupyterを起動する
+1. DockerHubにある[taiga4112/jmodelica:jm0](https://hub.docker.com/repository/docker/taiga4112/jmodelica)のイメージを利用して、以下のコマンドでJupyterを起動する
 
   ```sh
   $ docker pull taiga4112/jmodelica:jm0
@@ -60,6 +61,8 @@
       taiga4112/jmodelica:jm0 /usr/local/jmodelica/bin/jm_start.sh
   ```
 
-- その後、[http://localhost:8888](http://localhost:8888)にアクセスする
-  - Access Tokenは`jmodelica`です
+2. その後、[http://localhost:8888](http://localhost:8888)にアクセスする
+    - Access Tokenは`jmodelica`です
+
+3. `notebooks`フォルダにサンプルを置いてあるので、いろいろと試してみてください
 
